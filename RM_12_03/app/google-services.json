@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "98658499037",
+    "firebase_url": "https://rm-relationship-management.firebaseio.com",
+    "project_id": "rm-relationship-management",
+    "storage_bucket": "rm-relationship-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98658499037:android:b67d6840c276118e",
+        "android_client_info": {
+          "package_name": "lofy.fpt.edu.vn.rm_12_03"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98658499037-0mlunl037n3befmapt48shnq0kge32s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lofy.fpt.edu.vn.rm_12_03",
+            "certificate_hash": "e44608d7b17d113af2956dbef0a30fabd13089e5"
+          }
+        },
+        {
+          "client_id": "98658499037-a125pii98snafoikn02i62ojubaca8jb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKxCi29zWffwsaYBGkCLAySSXEvfdgEz0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98658499037-a125pii98snafoikn02i62ojubaca8jb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
