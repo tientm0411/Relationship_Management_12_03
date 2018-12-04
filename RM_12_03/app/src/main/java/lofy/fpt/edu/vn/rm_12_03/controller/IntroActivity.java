@@ -1,19 +1,23 @@
 package lofy.fpt.edu.vn.rm_12_03.controller;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.firebase.database.FirebaseDatabase;
-
 import lofy.fpt.edu.vn.rm_12_03.R;
 
-public class IntroActivity extends AppCompatActivity implements View.OnClickListener {
+public class IntroActivity extends AppCompatActivity implements View.OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
     private Button btnNext;
 
-    private FirebaseDatabase firebaseDatabase;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor editor;
+
+    public static final String FILE_NAME = "Inital-Data-App-RM-ver1";
+    public static final String USER_ID = "userId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,10 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initView() {
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        mSharedPreferences = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        mSharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        editor = mSharedPreferences.edit();
+
         btnNext = (Button) findViewById(R.id.intro_btn_next);
         btnNext.setOnClickListener(this);
     }
@@ -41,5 +48,15 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
     private void nextActivity() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+
+    }
+    @Override
+    protected void onDestroy() {
+        mSharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+        super.onDestroy();
     }
 }
